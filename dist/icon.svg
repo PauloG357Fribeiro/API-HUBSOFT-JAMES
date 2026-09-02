@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="28" fill="#1a1a1a" />
+  <text x="64" y="80" font-family="monospace" font-weight="bold" font-size="40" text-anchor="middle">
+    <tspan fill="#4da3ff">&lt;</tspan><tspan fill="#ff9800">PG</tspan><tspan fill="#4da3ff">/&gt;</tspan>
+  </text>
+</svg>

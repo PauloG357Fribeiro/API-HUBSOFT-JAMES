@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "< HubAuto - PG />",
+  "version": "1.1.0",
+  "description": "Integração inteligente entre o James e o HubSoft para automatizar os chamados do HelpDesk.",
+  "homepage_url": "https://github.com/PauloG357Fribeiro/",
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "permissions": ["activeTab"],
+  "host_permissions": [
+    "http://172.21.1.112:5678/*",
+    "http://172.21.1.112/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    },
+    {
+      "matches": ["*://audicom.hubsoft.com.br/cliente/editar/*/atendimento*"],
+      "js": ["hubsoft_auto.js"]
+    }
+  ]
+}

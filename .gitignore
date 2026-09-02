@@ -1,0 +1,8 @@
+/src/
+node_modules/
+*.obf.js
+
+# Local-only files, must never be committed (contain credentials)
+N8N final.json
+Atualizador.bat
+Atualizador.exe

@@ -1,0 +1,171 @@
+/* Botão integrado ao estilo nativo do painel */
+#btn-wrapper-james-hubsoft {
+  margin-left: 0;
+  display: block;
+  clear: both;
+}
+
+.btn-james-chat-action {
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+/* Modal Overlay com namespace 100% isolado */
+#hubsoft-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  z-index: 99999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+#hubsoft-modal-overlay .hs-container {
+  background-color: #0d0d0d;
+  border: 1px solid #262626;
+  border-radius: 8px;
+  width: 50vw;
+  min-width: 600px;
+  max-width: 800px;
+  max-height: 90vh;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.95);
+  box-sizing: border-box;
+}
+
+/* Header isolado */
+#hubsoft-modal-overlay .hs-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #262626;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#hubsoft-modal-overlay .hs-header h2 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+#hubsoft-modal-overlay .hs-close-btn {
+  background: transparent;
+  border: none;
+  color: #737373;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+#hubsoft-modal-overlay .hs-close-btn:hover {
+  color: #ffffff;
+}
+
+/* Formulário isolado */
+#hubsoft-modal-overlay .hs-body {
+  padding: 20px;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  box-sizing: border-box;
+}
+
+#hubsoft-modal-overlay .hs-field-full {
+  grid-column: span 2;
+}
+
+#hubsoft-modal-overlay label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #a3a3a3;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+#hubsoft-modal-overlay input, 
+#hubsoft-modal-overlay select, 
+#hubsoft-modal-overlay textarea {
+  width: 100%;
+  background-color: #171717;
+  border: 1px solid #262626;
+  color: #ffffff;
+  padding: 8px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+#hubsoft-modal-overlay input:focus, 
+#hubsoft-modal-overlay select:focus, 
+#hubsoft-modal-overlay textarea:focus {
+  border-color: #ffffff;
+  outline: none;
+  background-color: #1f1f1f;
+}
+
+#hubsoft-modal-overlay textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Footer isolado */
+#hubsoft-modal-overlay .hs-footer {
+  padding: 14px 20px;
+  border-top: 1px solid #262626;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  background-color: #0a0a0a;
+}
+
+#hubsoft-modal-overlay .hs-btn-secondary {
+  background-color: transparent;
+  color: #a3a3a3;
+  border: 1px solid #262626;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+#hubsoft-modal-overlay .hs-btn-secondary:hover {
+  color: #ffffff;
+  border-color: #525252;
+}
+
+#hubsoft-modal-overlay .hs-btn-primary {
+  background-color: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#hubsoft-modal-overlay .hs-btn-primary:hover {
+  background-color: #e5e5e5;
+  border-color: #e5e5e5;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "api-james-hubsoft",
+  "version": "1.0.0",
+  "description": "Build e ofuscacao da extensao HubAuto (Manifest V3)",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PauloG357Fribeiro/API-HUBSOFT-JAMES.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PauloG357Fribeiro/API-HUBSOFT-JAMES/issues"
+  },
+  "homepage": "https://github.com/PauloG357Fribeiro/API-HUBSOFT-JAMES#readme",
+  "devDependencies": {
+    "javascript-obfuscator": "^5.6.0"
+  }
+}

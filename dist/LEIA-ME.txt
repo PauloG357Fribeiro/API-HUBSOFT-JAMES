@@ -1,0 +1,35 @@
+===========================================
+ HubAuto - Integracao James + HubSoft
+===========================================
+
+INSTALAR (fazer uma unica vez)
+-------------------------------
+1. Guarde esta pasta em um local FIXO no computador (ex.: C:\HubAuto).
+   NAO deixe na pasta Downloads nem na Area de Trabalho, pois arquivos
+   nesses locais podem ser apagados ou movidos sem querer.
+2. Abra o navegador (Chrome ou Edge) e digite na barra de enderecos:
+   chrome://extensions
+3. Ative o "Modo desenvolvedor" (chave no canto superior direito).
+4. Clique em "Carregar sem compactacao" (ou "Load unpacked").
+5. Escolha esta pasta.
+6. Pronto. O icone da extensao deve aparecer na barra do navegador.
+
+ATUALIZAR
+-------------------------------
+1. De dois cliques em "atualizador.bat" (dentro desta mesma pasta).
+2. Aguarde a mensagem de conclusao.
+3. Va em chrome://extensions e clique no botao de recarregar (icone de
+   seta circular) no card da extensao HubAuto.
+4. Feche e reabra a aba do James.
+
+PROBLEMAS COMUNS
+-------------------------------
+- "A extensao sumiu da lista": a pasta foi movida ou apagada. Restaure-a
+  no local original ou repita o passo de instalacao com a pasta atual.
+- "O atualizador nao atualiza nada": verifique sua conexao com a
+  internet e tente rodar o atualizador.bat novamente.
+- "O sistema diz que a extensao esta desatualizada e bloqueia o uso":
+  rode o atualizador.bat, espere terminar, recarregue a extensao em
+  chrome://extensions e reabra a aba do James.
+
+Duvidas: fale com o responsavel pela extensao.
