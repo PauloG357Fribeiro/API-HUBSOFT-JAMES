@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "< HubAuto - PG />",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Integração inteligente entre o James e o HubSoft para automatizar os chamados do HelpDesk.",
   "homepage_url": "https://github.com/PauloG357Fribeiro/",
   "icons": {
