@@ -2,7 +2,9 @@
 node_modules/
 *.obf.js
 
-# Local-only files, must never be committed (contain credentials)
-N8N final.json
-Atualizador.bat
-Atualizador.exe
+# Arquivos locais que NUNCA podem ser commitados (contem credenciais).
+# A barra no inicio prende a regra a RAIZ do repositorio, para nao pegar
+# por engano o dist/atualizador.bat, que precisa ser publicado.
+/N8N final.json
+/Atualizador.bat
+/Atualizador.exe
