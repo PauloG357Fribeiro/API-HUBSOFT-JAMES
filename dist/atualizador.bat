@@ -1,6 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 title Atualizador da Extensao HubSoft
+cd /d "%~dp0"
 
 echo ============================================
 echo   ATUALIZADOR DA EXTENSAO HUBSOFT
