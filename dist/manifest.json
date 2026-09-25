@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "< HubAuto - PG />",
-  "version": "1.2.9",
+  "version": "1.3.0",
   "description": "Integração inteligente entre o James e o HubSoft para automatizar os chamados do HelpDesk.",
   "homepage_url": "https://github.com/PauloG357Fribeiro/",
   "icons": {
@@ -10,14 +10,14 @@
     "128": "icon.png"
   },
   "action": {
-    "default_title": "Abrir tratativa HubSoft (ligação)",
+    "default_title": "HubAuto · Clique para ver portfólio | Botão direito para abrir chamado ramal",
     "default_icon": {
       "16": "icon.png",
       "48": "icon.png",
       "128": "icon.png"
     }
   },
-  "permissions": ["activeTab", "scripting"],
+  "permissions": ["activeTab", "scripting", "contextMenus"],
   "host_permissions": [
     "http://172.21.1.112:5678/*",
     "http://172.21.1.112/*"
