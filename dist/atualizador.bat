@@ -15,7 +15,9 @@ set REPO_URL=https://raw.githubusercontent.com/PauloG357Fribeiro/API-HUBSOFT-JAM
 
 :: -f  = falha de verdade em erro HTTP (nao grava pagina de erro dentro do arquivo)
 :: -sS = silencioso, mas mostra a mensagem se der erro
-set CURL=curl -fsS
+:: Headers de no-cache forcam o GitHub CDN a entregar o arquivo mais recente,
+:: evitando que versao antiga em cache mascare uma atualizacao publicada.
+set CURL=curl -fsS -H "Cache-Control: no-cache" -H "Pragma: no-cache"
 
 :: ---------- versao instalada ----------
 if not exist manifest.json (
@@ -27,11 +29,14 @@ if not exist manifest.json (
 for /f "tokens=2 delims=:," %%a in ('findstr /c:"\"version\"" manifest.json') do set LOCAL_VER=%%a
 set LOCAL_VER=%LOCAL_VER:"=%
 set LOCAL_VER=%LOCAL_VER: =%
+:: Remove carriage return (\r) que pode vir de arquivos gerados no Linux/Mac
+:: e que torna a comparacao de string falsa mesmo com versoes iguais.
+for /f "delims=" %%a in ("%LOCAL_VER%") do set LOCAL_VER=%%a
 
 :: ---------- versao publicada ----------
 if exist temp_manifest.json del temp_manifest.json
 
-%CURL% -o temp_manifest.json "%REPO_URL%/manifest.json?t=%RANDOM%"
+%CURL% -o temp_manifest.json "%REPO_URL%/manifest.json"
 if errorlevel 1 (
     echo.
     echo ERRO: nao foi possivel baixar o manifest do GitHub.
@@ -43,6 +48,8 @@ if errorlevel 1 (
 for /f "tokens=2 delims=:," %%a in ('findstr /c:"\"version\"" temp_manifest.json') do set REMOTE_VER=%%a
 set REMOTE_VER=%REMOTE_VER:"=%
 set REMOTE_VER=%REMOTE_VER: =%
+:: Remove \r do valor remoto (arquivos do GitHub podem ter terminacao Unix)
+for /f "delims=" %%a in ("%REMOTE_VER%") do set REMOTE_VER=%%a
 
 :: Sem versao remota valida, NAO mexe em nada
 if "%REMOTE_VER%"=="" (
