@@ -1,0 +1,2 @@
+# .bat precisa ficar em CRLF no repo (git nao pode converter)
+*.bat -text
