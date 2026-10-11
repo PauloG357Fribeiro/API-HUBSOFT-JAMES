@@ -169,3 +169,215 @@
   background-color: #e5e5e5;
   border-color: #e5e5e5;
 }
+/* ==========================================
+   Botoes de acao do HubAuto (historico / abrir cliente)
+   ========================================== */
+.hubauto-linha-acao {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hubauto-btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.2s ease, filter 0.2s ease;
+}
+
+.hubauto-btn:not(.hubauto-off):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.hubauto-btn:not(.hubauto-off):active { transform: translateY(0); }
+
+.hubauto-btn-hist .fa { transition: transform 0.45s ease; }
+.hubauto-btn-hist:not(.hubauto-off):hover .fa { transform: rotate(-360deg); }
+
+/* Contador de protocolos recentes no botao de historico */
+.hubauto-pill {
+  display: inline-block;
+  min-width: 18px;
+  padding: 0 6px;
+  border-radius: 9px;
+  background: rgba(0, 0, 0, 0.45);
+  font-size: 10px;
+  line-height: 16px;
+  text-align: center;
+}
+
+/* Estado "apagado": cliente sem dados capturados */
+.hubauto-btn.hubauto-off {
+  opacity: 0.4;
+  filter: grayscale(0.7);
+  cursor: not-allowed !important;
+  pointer-events: auto;   /* mantem o tooltip (title) funcionando */
+  box-shadow: none !important;
+}
+
+.hubauto-aviso {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #9a5b00;
+  background: #fff3e0;
+  border-radius: 12px;
+  padding: 2px 10px;
+  animation: hubauto-aviso-in 0.25s ease;
+}
+
+.hubauto-aviso.hubauto-aviso-neutro {
+  color: #666;
+  background: #eceff1;
+}
+
+@keyframes hubauto-aviso-in {
+  from { opacity: 0; transform: translateX(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ==========================================
+   TELA DE HISTORICO (exclusiva) - visual sobrio, mesma linha do modal de tratativa
+   ========================================== */
+#hubauto-hist-overlay {
+  position: fixed; inset: 0; z-index: 2147483000;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  font-family: Arial, sans-serif;
+}
+
+#hubauto-hist-overlay .hh-painel {
+  width: min(820px, 94vw); height: min(88vh, 860px);
+  display: flex; flex-direction: column;
+  background: #1a1a1a; color: #ddd;
+  border: 1px solid #444; border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  overflow: hidden; font-size: 13px; line-height: 1.45; box-sizing: border-box;
+}
+#hubauto-hist-overlay .hh-painel * { box-sizing: border-box; }
+
+#hubauto-hist-overlay .hh-topo {
+  display: flex; align-items: center; gap: 14px; padding: 15px;
+  border-bottom: 1px solid #444; background: #222;
+}
+#hubauto-hist-overlay .hh-avatar { display: none; }
+#hubauto-hist-overlay .hh-ident { flex: 1; min-width: 0; }
+#hubauto-hist-overlay .hh-nome { font-size: 16px; font-weight: bold; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#hubauto-hist-overlay .hh-sub { color: #888; font-size: 12px; margin-top: 2px; }
+#hubauto-hist-overlay .hh-topo-acoes { display: flex; align-items: center; gap: 12px; }
+#hubauto-hist-overlay .hh-x { background: transparent; border: none; color: #fff; font-size: 20px; font-weight: bold; line-height: 1; cursor: pointer; }
+#hubauto-hist-overlay .hh-x:hover { color: #aaa; }
+
+#hubauto-hist-overlay .hh-tag { margin-left: 8px; padding: 1px 6px; border: 1px solid #555; border-radius: 3px; font-size: 10px; font-weight: bold; color: #aaa; }
+
+#hubauto-hist-overlay .hh-stats { display: flex; gap: 10px; padding: 15px 15px 0; }
+#hubauto-hist-overlay .hh-stats:empty { display: none; }
+#hubauto-hist-overlay .hh-stat { flex: 1; background: #222; border: 1px solid #444; border-radius: 4px; padding: 8px 12px; }
+#hubauto-hist-overlay .hh-stat b { display: block; font-size: 20px; color: #fff; line-height: 1.2; }
+#hubauto-hist-overlay .hh-stat span { color: #888; font-size: 11px; }
+
+#hubauto-hist-overlay .hh-barra { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 15px; }
+#hubauto-hist-overlay .hh-chips { display: flex; gap: 0; border: 1px solid #555; border-radius: 3px; overflow: hidden; }
+#hubauto-hist-overlay .hh-chips button {
+  border: 0; border-right: 1px solid #555; background: #222; color: #aaa; font-size: 12px;
+  padding: 6px 12px; cursor: pointer; font-family: inherit;
+}
+#hubauto-hist-overlay .hh-chips button:last-child { border-right: 0; }
+#hubauto-hist-overlay .hh-chips button:hover { color: #fff; background: #2a2a2a; }
+#hubauto-hist-overlay .hh-chips button.hh-ativo { background: #444; color: #fff; font-weight: bold; }
+#hubauto-hist-overlay #hh-busca {
+  flex: 1; min-width: 180px; height: 31px; padding: 0 10px; border-radius: 3px;
+  background: #222; border: 1px solid #444; color: #fff; font-size: 13px; font-family: inherit; outline: none;
+}
+#hubauto-hist-overlay #hh-busca:focus { border-color: #888; }
+
+#hubauto-hist-overlay .hh-corpo { flex: 1; overflow-y: auto; padding: 0 15px 15px; }
+#hubauto-hist-overlay .hh-corpo::-webkit-scrollbar { width: 8px; }
+#hubauto-hist-overlay .hh-corpo::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+
+#hubauto-hist-overlay .hh-mes { margin: 14px 0 8px; font-size: 11px; font-weight: bold; text-transform: uppercase; color: #888; border-bottom: 1px solid #333; padding-bottom: 4px; }
+#hubauto-hist-overlay .hh-linha { position: relative; }
+#hubauto-hist-overlay .hh-item { margin-bottom: 10px; }
+#hubauto-hist-overlay .hh-ponto { display: none; }
+#hubauto-hist-overlay .hh-card { background: #1e1e1e; border: 1px solid #333; border-radius: 4px; padding: 12px; }
+#hubauto-hist-overlay .hh-card-topo { display: flex; align-items: flex-start; justify-content: space-between; gap: 10px; }
+#hubauto-hist-overlay .hh-card h3 { margin: 0; font-size: 13px; font-weight: bold; color: #fff; }
+#hubauto-hist-overlay .hh-status { flex-shrink: 0; font-size: 11px; color: #aaa; border: 1px solid #555; border-radius: 3px; padding: 1px 7px; }
+#hubauto-hist-overlay .hh-aberto .hh-status { color: #fff; font-weight: bold; border-color: #aaa; }
+#hubauto-hist-overlay .hh-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 6px 0 8px; color: #888; font-size: 11px; }
+#hubauto-hist-overlay .hh-proto { border: 1px solid #555; background: #2a2a2a; color: #ddd; border-radius: 3px; padding: 1px 7px; font-size: 11px; cursor: pointer; font-family: inherit; }
+#hubauto-hist-overlay .hh-proto:hover { border-color: #aaa; color: #fff; }
+#hubauto-hist-overlay .hh-proto i { font-style: normal; opacity: 0.6; }
+#hubauto-hist-overlay .hh-desc { margin: 0; color: #ccc; white-space: pre-wrap; word-break: break-word; font-size: 12px; background: #141414; border: 1px solid #282828; border-radius: 3px; padding: 8px; }
+#hubauto-hist-overlay .hh-desc.hh-clamp { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+#hubauto-hist-overlay .hh-card-rodape { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+#hubauto-hist-overlay .hh-mais { border: 0; background: transparent; color: #aaa; font-size: 11px; cursor: pointer; padding: 0; font-family: inherit; text-decoration: underline; }
+#hubauto-hist-overlay .hh-mais:hover { color: #fff; }
+#hubauto-hist-overlay .hh-link { color: #aaa !important; font-size: 11px; text-decoration: underline !important; }
+#hubauto-hist-overlay .hh-link:hover { color: #fff !important; }
+
+#hubauto-hist-overlay .hh-btn { border: 1px solid #555; background: #444; color: #fff; border-radius: 3px; padding: 6px 14px; font-size: 12px; cursor: pointer; font-family: inherit; }
+#hubauto-hist-overlay .hh-btn:hover { background: #555; }
+#hubauto-hist-overlay .hh-rodape { display: flex; align-items: center; justify-content: space-between; padding: 12px 15px; border-top: 1px solid #444; background: #222; color: #888; font-size: 12px; }
+#hubauto-hist-overlay .hh-rodape:empty { display: none; }
+
+#hubauto-hist-overlay .hh-vazio { text-align: center; padding: 60px 20px; color: #888; }
+#hubauto-hist-overlay .hh-vazio-ic { display: none; }
+#hubauto-hist-overlay .hh-vazio-t { font-size: 14px; margin-bottom: 14px; color: #aaa; }
+
+#hubauto-hist-overlay .hh-sk { background: #1e1e1e; border: 1px solid #333; border-radius: 4px; padding: 14px; margin: 12px 0; }
+#hubauto-hist-overlay .hh-sk div { height: 10px; border-radius: 2px; margin-bottom: 9px; background: #2a2a2a; }
+#hubauto-hist-overlay .hh-sk-l1 { width: 45%; height: 13px !important; }
+#hubauto-hist-overlay .hh-sk-l2 { width: 30%; }
+#hubauto-hist-overlay .hh-sk-l3 { width: 90%; margin-bottom: 0 !important; }
+
+@media (max-width: 640px) {
+  #hubauto-hist-overlay .hh-stats { flex-wrap: wrap; }
+  #hubauto-hist-overlay .hh-stat { min-width: 45%; }
+}
+
+/* ==========================================
+   ANEXOS: fotos e videos
+   ========================================== */
+.hubauto-anexos { background: #1e1e1e; border: 1px solid #333; border-radius: 12px; padding: 12px; }
+.hubauto-anexos-topo { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 10px; }
+.hubauto-anexos-titulo { font-size: 12px; font-weight: 700; color: #ddd; }
+.hubauto-anexos-cont { margin-left: 8px; font-size: 11px; font-weight: 500; color: #888; }
+.hubauto-anexos-acoes { display: flex; gap: 6px; }
+.hubauto-mini-btn { background: #222; border: 1px solid #444; color: #aaa; font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 8px; cursor: pointer; font-family: inherit; }
+.hubauto-mini-btn:hover { border-color: #4CAF50; color: #fff; }
+
+.hubauto-zona { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 2px dashed #444; border-radius: 10px; cursor: pointer; transition: border-color 0.15s ease, background 0.15s ease; }
+.hubauto-zona:hover, .hubauto-zona.hubauto-zona-ativa { border-color: #4CAF50; background: transparent; }
+.hubauto-zona-icone { width: 34px; height: 34px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #2a2a2a; color: #aaa; font-size: 16px; }
+.hubauto-zona-txt { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: #ddd; }
+.hubauto-zona-txt span { font-size: 11px; color: #888; }
+.hubauto-zona-txt kbd { background: #2a2a2a; border: 1px solid #555; border-bottom-width: 2px; border-radius: 4px; padding: 0 4px; font-size: 10px; font-family: inherit; color: #aaa; }
+
+.hubauto-anexos-aviso { margin-top: 8px; padding: 6px 10px; border-radius: 8px; background: rgba(255, 152, 0, 0.12); color: #ffb74d; font-size: 11px; }
+.hubauto-anexos-vazio { margin-top: 8px; font-size: 11px; color: #666; }
+
+.hubauto-midias { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px; }
+.hubauto-midia { position: relative; width: 92px; cursor: pointer; }
+.hubauto-midia input { position: absolute; opacity: 0; pointer-events: none; }
+.hubauto-midia-corpo { position: relative; display: block; width: 92px; height: 78px; border-radius: 10px; overflow: hidden; border: 2px solid #444; background: #222; transition: border-color 0.15s ease, opacity 0.15s ease; opacity: 0.55; }
+.hubauto-midia input:checked + .hubauto-midia-corpo { border-color: #4CAF50; opacity: 1; }
+.hubauto-midia input:checked + .hubauto-midia-corpo::after { content: "✓"; position: absolute; top: 4px; left: 4px; width: 18px; height: 18px; border-radius: 50%; background: #4CAF50; color: #fff; font-size: 11px; font-weight: 700; line-height: 18px; text-align: center; }
+.hubauto-midia .hubauto-thumb { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hubauto-thumb-vazia { display: flex; align-items: center; justify-content: center; color: #666; font-size: 10px; }
+.hubauto-midia-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 28px; height: 28px; border-radius: 50%; background: rgba(0, 0, 0, 0.6); color: #fff; font-size: 11px; line-height: 28px; text-align: center; }
+.hubauto-midia-tag { position: absolute; left: 0; right: 0; bottom: 0; padding: 2px 5px; background: rgba(0, 0, 0, 0.62); color: #ddd; font-size: 9px; font-weight: 700; letter-spacing: 0.3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hubauto-midia-x { position: absolute; top: 3px; right: 3px; width: 18px; height: 18px; padding: 0; border: 0; border-radius: 50%; background: rgba(0, 0, 0, 0.65); color: #fff; font-size: 13px; line-height: 18px; text-align: center; cursor: pointer; }
+.hubauto-midia-x:hover { background: #dc2626; }
+.hubauto-midia-nome { display: block; margin-top: 3px; font-size: 10px; color: #888; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.hubauto-medidor { margin-top: 10px; }
+.hubauto-medidor-txt { display: flex; justify-content: space-between; font-size: 11px; color: #888; margin-bottom: 4px; }
+.hubauto-medidor-erro { color: #f87171; font-weight: 700; }
+.hubauto-medidor-barra { height: 5px; border-radius: 5px; background: #2a2a2a; overflow: hidden; }
+.hubauto-medidor-barra div { height: 100%; background: #4CAF50; border-radius: 5px; transition: width 0.2s ease; }
+.hubauto-medidor-barra div.hubauto-medidor-estouro { background: #ef4444; }
