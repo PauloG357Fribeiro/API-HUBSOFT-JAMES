@@ -383,12 +383,23 @@
 .hubauto-medidor-barra div { height: 100%; background: #4CAF50; border-radius: 5px; transition: width 0.2s ease; }
 .hubauto-medidor-barra div.hubauto-medidor-estouro { background: #ef4444; }
 
-/* Badges (VIP, versao, chamado aberto): uma por linha, alinhadas a esquerda como os botoes do James */
+/* Badges (VIP, versao, chamado aberto): metade direita do painel, uma por linha, alinhadas a direita */
+#hubauto-acoes {
+  position: relative;   /* tags flutuam a direita e nao empurram o que vem abaixo */
+}
+
+#hubauto-badges {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 50%;
+}
+
 #hubauto-badge-vip > *,
 #hubauto-badge-versao > *,
 #hubauto-badge-chamado > * {
   display: table;
-  margin: 5px 0 0 0 !important;
+  margin: 0 0 5px auto !important;
 }
 
 /* ==========================================
@@ -445,3 +456,36 @@
   #hubauto-edit-overlay .he-corpo { flex-direction: column; }
   #hubauto-edit-overlay .he-lista { width: 100%; max-height: 38%; border-right: 0; border-bottom: 1px solid #333; }
 }
+
+/* Popup do Login: cliente no HubSoft / equipamento */
+#hubauto-login-popup {
+  position: fixed;
+  z-index: 99999;
+  width: 390px;
+  padding: 10px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  font-size: 12px;
+}
+#hubauto-login-popup .hp-titulo { margin: 10px 0 4px; font-weight: bold; color: #666; }
+#hubauto-login-popup .hp-linha { padding: 6px 0; border-top: 1px solid #eee; }
+#hubauto-login-popup .hp-rot { font-weight: bold; }
+#hubauto-login-popup .hp-id { color: #999; font-weight: normal; }
+#hubauto-login-popup .hp-off { color: #b3261e; font-weight: normal; }
+#hubauto-login-popup .hp-sem { color: #888; padding: 4px 0; }
+#hubauto-login-popup .hp-acoes { flex-wrap: wrap; display: flex; align-items: center; gap: 6px; margin-top: 4px; }
+#hubauto-login-popup .hp-portas { display: inline-flex; gap: 4px; }
+#hubauto-login-popup .hp-ip { font-family: monospace; font-size: 13px; padding: 2px 8px; background: #f3f3f3; border-radius: 3px; color: #c7254e; }
+#hubauto-login-popup .hp-portas { align-items: center; }
+#hubauto-login-popup .hp-proto { height: 22px; font-size: 12px; border: 1px solid #ccc; border-radius: 3px; background: #fff; }
+#hubauto-login-popup .hp-porta-outra { width: 56px; height: 22px; padding: 0 6px; font-size: 12px; border: 1px solid #ccc; border-radius: 3px; }
+/* Portas: cinza; azul so ao passar o mouse */
+#hubauto-login-popup .hp-portas button { background: #c4c4c4; border-color: #c4c4c4; color: #fff; }
+#hubauto-login-popup .hp-portas button:hover,
+#hubauto-login-popup .hp-portas button:focus { background: #1e88e5; border-color: #1e88e5; color: #fff; }
+#hubauto-login-popup .hp-tempo { font-size: 11px; margin-top: 2px; }
+#hubauto-login-popup .hp-tempo.hp-on { color: #2e7d32; }
+#hubauto-login-popup .hp-tempo.hp-off { color: #b3261e; }
