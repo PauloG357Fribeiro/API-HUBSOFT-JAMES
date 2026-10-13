@@ -9,6 +9,9 @@ echo ============================================
 echo.
 echo [1/3] Verificando atualizacoes no GitHub...
 
+set SELF_UPDATE=0
+if exist atualizador_novo.bat del atualizador_novo.bat
+
 :: Base publica dos arquivos (repo publico, sem token)
 :: Os arquivos ficam dentro da pasta dist/ do repositorio
 set REPO_URL=https://raw.githubusercontent.com/PauloG357Fribeiro/API-HUBSOFT-JAMES/main/dist
@@ -75,7 +78,7 @@ echo [2/3] Nova versao encontrada. Baixando arquivos...
 :: ---------- baixa TUDO em temporarios antes de aplicar ----------
 set FALHOU=0
 
-for %%F in (content.js hubsoft_auto.js content.css background.js) do (
+for %%F in (content.js hubsoft_auto.js content.css background.js icon.png) do (
     %CURL% -o "temp_%%F" "%REPO_URL%/%%F?t=%RANDOM%"
     if errorlevel 1 (
         echo     AVISO: falha ao baixar %%F
@@ -89,18 +92,42 @@ if "!FALHOU!"=="1" (
     echo Nada foi alterado, sua extensao continua funcionando.
     echo Tente de novo em alguns minutos.
     if exist temp_manifest.json del temp_manifest.json
-    for %%F in (content.js hubsoft_auto.js content.css background.js) do if exist "temp_%%F" del "temp_%%F"
+    for %%F in (content.js hubsoft_auto.js content.css background.js icon.png) do if exist "temp_%%F" del "temp_%%F"
     goto fim
 )
 
+:: ---------- baixa a versao nova deste proprio atualizador (nao fatal) ----------
+:: Fica em arquivo separado; so e trocado no FINAL (um .bat nao pode se
+:: sobrescrever enquanto esta rodando, o cmd le o arquivo aos poucos).
+%CURL% -o atualizador_novo.bat "%REPO_URL%/atualizador.bat?t=%RANDOM%"
+if errorlevel 1 (
+    echo     AVISO: nao foi possivel baixar a nova versao do atualizador.
+    echo            A extensao sera atualizada normalmente.
+    if exist atualizador_novo.bat del atualizador_novo.bat
+) else (
+    findstr /c:"@echo off" atualizador_novo.bat >nul
+    if errorlevel 1 (
+        if exist atualizador_novo.bat del atualizador_novo.bat
+    ) else (
+        rem igual ao atual? entao nao precisa trocar
+        fc /b "%~f0" atualizador_novo.bat >nul
+        if not errorlevel 1 (
+            del atualizador_novo.bat
+        ) else (
+            set SELF_UPDATE=1
+        )
+    )
+)
+
 :: ---------- so agora aplica; manifest por ultimo ----------
-for %%F in (content.js hubsoft_auto.js content.css background.js) do (
+for %%F in (content.js hubsoft_auto.js content.css background.js icon.png) do (
     move /y "temp_%%F" "%%F" >nul
 )
 move /y temp_manifest.json manifest.json >nul
 
 echo.
 echo [3/3] Atualizacao concluida! Versao %REMOTE_VER% instalada.
+if "!SELF_UPDATE!"=="1" echo     O proprio atualizador tambem foi atualizado.
 echo.
 
 :: ---------- fim ----------
@@ -114,3 +141,10 @@ echo.
 :fim
 echo.
 pause
+if "%SELF_UPDATE%"=="1" goto autoatualizar
+goto :eof
+
+:autoatualizar
+:: "(goto) 2>nul" encerra o contexto do .bat (libera o arquivo) e o comando
+:: seguinte ainda executa: troca este atualizador pelo novo. Sem saida na tela.
+(goto) 2>nul & move /y "atualizador_novo.bat" "%~f0" >nul
