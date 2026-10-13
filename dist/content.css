@@ -385,14 +385,15 @@
 
 /* Badges (VIP, versao, chamado aberto): metade direita do painel, uma por linha, alinhadas a direita */
 #hubauto-acoes {
-  position: relative;   /* tags flutuam a direita e nao empurram o que vem abaixo */
+  display: flex;
+  flex-wrap: wrap;            /* sem espaco ao lado, as tags descem em vez de ficar por cima dos botoes */
+  align-items: flex-start;
+  gap: 6px 8px;
 }
 
 #hubauto-badges {
-  position: absolute;
-  top: 0;
-  right: 0;
-  max-width: 50%;
+  margin-left: auto;
+  flex: 0 1 auto;
 }
 
 #hubauto-badge-vip > *,
@@ -401,6 +402,8 @@
   display: table;
   margin: 0 0 5px auto !important;
 }
+
+#hubauto-badges > span:last-child > * { margin-bottom: 0 !important; }
 
 /* ==========================================
    EDITAR MENSAGENS ENVIADAS (WhatsApp)
