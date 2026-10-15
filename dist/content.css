@@ -392,8 +392,9 @@
 }
 
 #hubauto-badges {
-  margin-left: auto;
-  flex: 0 1 auto;
+  float: right;
+  clear: right;
+  margin-left: 8px;
 }
 
 #hubauto-badge-vip > *,
@@ -473,6 +474,8 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   font-size: 12px;
 }
+/* ~3 equipamentos e meio visiveis: o corte no 4o mostra que a lista rola */
+#hubauto-popup-ips { max-height: 320px; overflow-y: auto; }
 #hubauto-login-popup .hp-titulo { margin: 10px 0 4px; font-weight: bold; color: #666; }
 #hubauto-login-popup .hp-linha { padding: 6px 0; border-top: 1px solid #eee; }
 #hubauto-login-popup .hp-rot { font-weight: bold; }
