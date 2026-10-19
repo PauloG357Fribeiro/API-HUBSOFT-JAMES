@@ -399,7 +399,8 @@
 
 #hubauto-badge-vip > *,
 #hubauto-badge-versao > *,
-#hubauto-badge-chamado > * {
+#hubauto-badge-chamado > *,
+#hubauto-badge-agenda > * {
   display: table;
   margin: 0 0 5px auto !important;
 }
@@ -496,3 +497,18 @@
 #hubauto-login-popup .hp-tempo.hp-on { color: #2e7d32; }
 #hubauto-login-popup .hp-tempo.hp-off { color: #b3261e; }
 #hubauto-login-popup .hp-end { font-size: 11px; font-weight: normal; color: #666; margin-top: 2px; }
+#hubauto-login-popup .hp-rede { font-size: 11px; color: #444; margin-top: 3px; }
+#hubauto-login-popup .hp-rede .btn { margin-left: 4px; }
+#hubauto-login-popup .hp-end a { color: inherit; text-decoration: none; }
+#hubauto-login-popup .hp-end a:hover { color: #1e88e5; text-decoration: underline; }
+
+/* Tag da agenda dos tecnicos e lista de eventos */
+/* Tag da agenda: so o label do James; aqui apenas deixa quebrar linha em vez de cortar */
+#hubauto-badge-agenda > a.label { max-width: 235px; white-space: normal; text-align: left; line-height: 1.4; font-size: 11px; }
+#hubauto-agenda-popup { position: fixed; z-index: 99999; width: 380px; max-height: 320px; overflow-y: auto; padding: 10px; background: #fff; color: #333; border: 1px solid #ccc; border-radius: 4px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); font-size: 12px; }
+#hubauto-agenda-popup .hp-titulo { margin: 0 0 6px; font-weight: bold; color: #666; }
+#hubauto-agenda-popup .ha-linha { display: block; padding: 6px 4px; border-top: 1px solid #eee; color: inherit; text-decoration: none; }
+#hubauto-agenda-popup .ha-linha:hover { background: #f3f7fb; }
+#hubauto-agenda-popup .ha-quando { margin-left: 6px; font-weight: bold; }
+#hubauto-agenda-popup .ha-quem { display: block; margin-top: 2px; color: #555; }
+#hubauto-agenda-popup .ha-tit { display: block; margin-top: 1px; color: #888; font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
