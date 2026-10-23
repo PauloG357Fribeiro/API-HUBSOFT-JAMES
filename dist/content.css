@@ -541,3 +541,7 @@
 #hubauto-login-popup .hp-eq-st { color: #fff; font-weight: bold; padding: 0 5px; border-radius: 2px; font-size: 9px; text-transform: uppercase; }
 #hubauto-login-popup .hp-eq-como { background: #f8ac59; }
 #hubauto-login-popup .hp-eq-vend { background: #1ab394; }
+
+#hubauto-status-plano .hp-on-off { font-size: 12px; font-weight: bold; }
+#hubauto-status-plano .hp-on { color: #2e7d32; }
+#hubauto-status-plano .hp-off { color: #b3261e; }
