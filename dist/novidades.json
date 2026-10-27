@@ -1,5 +1,16 @@
 [
   {
+    "versao": "1.6.9",
+    "data": "2026-10-27",
+    "itens": [
+      "Agenda: botão 'Neutro' remove as tags CONFIRMADO/REAGENDAR do evento.",
+      "Agenda: botão 'Verificar de novo' busca a agenda no Google outra vez para conferir se a marcação pegou.",
+      "Agenda: botão 'Mensagem' (evento agendado com equipe) preenche no chat a saudação, o dia e o período (manhã/tarde) e pergunta se pode confirmar na agenda. Você revisa e envia.",
+      "Agenda: a tag ganha ⚠ quando o evento é hoje ou amanhã e ainda não foi confirmado.",
+      "Novidades abrem sozinhas uma vez a cada versão nova."
+    ]
+  },
+  {
     "versao": "1.6.8",
     "data": "2026-10-27",
     "itens": [

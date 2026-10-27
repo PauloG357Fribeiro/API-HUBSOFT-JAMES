@@ -558,3 +558,9 @@
 #hubauto-novidades .hn-versao { padding: 8px 0; border-top: 1px solid #eee; }
 #hubauto-novidades .hn-versao span { color: #888; }
 #hubauto-novidades ul { margin: 4px 0 0 16px; padding: 0; }
+#hubauto-agenda-popup .ha-verificar { float: right; margin: -2px 0 0; }
+#hubauto-novidades .hn-versao summary { cursor: pointer; }
+#hubauto-novidades .hn-versao em { margin-left: 6px; padding: 1px 6px; border-radius: 8px; background: #1ab394; color: #fff; font-size: 10px; font-style: normal; font-weight: bold; }
+#hubauto-novidades .hn-versao li { margin: 3px 0; }
+#hubauto-novidades .hn-rodape { padding-top: 8px; border-top: 1px solid #eee; color: #888; text-align: center; }
+#hubauto-agenda-popup .ha-msg { border-color: #1c84c6; color: #1766a0; }
