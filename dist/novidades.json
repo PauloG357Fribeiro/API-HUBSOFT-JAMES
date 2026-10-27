@@ -1,5 +1,12 @@
 [
   {
+    "versao": "1.6.10",
+    "data": "2026-10-27",
+    "itens": [
+      "Correção: o aviso de novidades abria em qualquer site; agora só abre no James."
+    ]
+  },
+  {
     "versao": "1.6.9",
     "data": "2026-10-27",
     "itens": [
