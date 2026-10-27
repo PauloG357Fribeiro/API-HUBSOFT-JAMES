@@ -1,0 +1,10 @@
+[
+  {
+    "versao": "1.6.8",
+    "data": "2026-10-27",
+    "itens": [
+      "Agenda: ao clicar na tag AGENDADO abre a lista com 'Ir no evento', 'Confirmado' e 'Reagendar' (marca direto no Google Agenda, para quando o cliente confirma).",
+      "Novidades: clicar na bolinha 'HubAuto conectado' mostra o histórico do que mudou em cada versão. Aparece 'NOVIDADES' ao lado quando há algo que você ainda não viu."
+    ]
+  }
+]
