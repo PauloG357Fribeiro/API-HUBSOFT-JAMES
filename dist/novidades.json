@@ -1,5 +1,12 @@
 [
   {
+    "versao": "1.7.0",
+    "data": "2026-10-28",
+    "itens": [
+      "ITTV: abaixo do Status aparece se o cliente tem ITTV Plus. Clicando: login (e-mail) e senha (CPF) para copiar, botão 'Copiar mensagem' com o texto pronto para colar no chat e botão 'Testar login' que sai da conta que estiver aberta no ITTV e entra sozinho com o login do cliente."
+    ]
+  },
+  {
     "versao": "1.6.10",
     "data": "2026-10-27",
     "itens": [

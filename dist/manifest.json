@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "< HubAuto - PG /> v1.6.10",
-  "version": "1.6.10",
+  "name": "< HubAuto - PG /> v1.7.0",
+  "version": "1.7.0",
   "description": "Integração inteligente entre o James e o HubSoft para automatizar os chamados do HelpDesk.",
   "homepage_url": "https://github.com/PauloG357Fribeiro/",
   "icons": {
@@ -20,11 +20,14 @@
   "permissions": [
     "activeTab",
     "scripting",
-    "contextMenus"
+    "contextMenus",
+    "storage",
+    "cookies"
   ],
   "host_permissions": [
     "http://172.21.1.112:5678/*",
-    "http://172.21.1.112/*"
+    "http://172.21.1.112/*",
+    "https://*.ittv.com.br/*"
   ],
   "background": {
     "service_worker": "background.js"
@@ -47,6 +50,14 @@
       ],
       "js": [
         "hubsoft_auto.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://tv.ittv.com.br/*"
+      ],
+      "js": [
+        "ittv_auto.js"
       ]
     }
   ]
