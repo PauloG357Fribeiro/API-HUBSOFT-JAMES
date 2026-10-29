@@ -1,5 +1,13 @@
 [
   {
+    "versao": "1.7.1",
+    "data": "2026-10-29",
+    "itens": [
+      "Pós-atendimento: os chats do James ganham a etiqueta \"HubAuto · Pendente / Em andamento / Finalizado · pode encerrar\" quando o cliente tem um retorno pós-visita no painel de satisfação. Clicar na etiqueta abre o caso no painel. Só números do chat, telefone e atendente vão ao servidor interno; nunca nome do contato nem mensagens.",
+      "Correção: quem atualizou pelo atualizador.bat para a 1.7.0 ficou com a extensão quebrada (faltava um arquivo). Agora o login do ITTV vive dentro do arquivo principal."
+    ]
+  },
+  {
     "versao": "1.7.0",
     "data": "2026-10-28",
     "itens": [
