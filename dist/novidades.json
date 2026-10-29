@@ -1,5 +1,15 @@
 [
   {
+    "versao": "1.7.3",
+    "data": "2026-10-29",
+    "itens": [
+      "Agenda: o botão 'Reagendar' agora move o evento para a agenda audicom2002@gmail.com (mesmo dia e horário) com REAGENDAR no título. Só o Reagendar vai para essa conta.",
+      "Agenda: novo botão 'Definir equipe, dia e hora' nos eventos aguardando agendamento ou a reagendar: escolhe a equipe de campo, o dia e a hora, e o evento vai para a agenda da equipe.",
+      "Agenda: 'Executado' também troca a tag do chat para '4 - Feedback Atendimento' (o alerta de confirmação avisa).",
+      "ITTV: quando não há pacote, mostra 'Não possui nenhum pacote'."
+    ]
+  },
+  {
     "versao": "1.7.2",
     "data": "2026-10-29",
     "itens": [
