@@ -1,5 +1,12 @@
 [
   {
+    "versao": "1.7.2",
+    "data": "2026-10-29",
+    "itens": [
+      "Agenda: botão 'Executado' na lista da agenda do cliente marca a visita como EXECUTADA no Google Agenda (pede confirmação). O cliente entra na fila de pós-atendimento. O 'Neutro' também desfaz o Executado."
+    ]
+  },
+  {
     "versao": "1.7.1",
     "data": "2026-10-29",
     "itens": [
