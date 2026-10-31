@@ -1,5 +1,21 @@
 [
   {
+    "versao": "1.7.6",
+    "data": "2026-10-31",
+    "itens": [
+      "Histórico de chats: toda conversa encerrada no James é guardada no painel de satisfação. O botão Encerramento Automático volta a aparecer. O radar de chats foi desligado."
+    ]
+  },
+  {
+    "versao": "1.7.4",
+    "data": "2026-10-30",
+    "itens": [
+      "Agenda: o botão 'Executado' agora troca de verdade a tag do chat para '4 - Feedback Atendimento' (usa o mesmo menu de marcadores do James) e confere depois se mudou.",
+      "Pós-atendimento: chat encerrado com a tag 'Tratativa Campo' ou 'Feedback Atendimento' é enviado ao painel na hora, que confere se o caso já estava lá e salva se faltar (aparece na linha de andamento do James).",
+      "Pós-atendimento: o painel passa a mostrar o nome do contato como aparece na lista de chats do James (nem sempre é o do cliente), só para ajudar a localizar o chat."
+    ]
+  },
+  {
     "versao": "1.7.3",
     "data": "2026-10-29",
     "itens": [
