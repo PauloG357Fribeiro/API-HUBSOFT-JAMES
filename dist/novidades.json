@@ -4,7 +4,7 @@
     "data": "2026-10-31",
     "itens": [
       "Agenda: novo botão “Encerrar chat” no selo EXECUTADO. Pede confirmação, troca a tag para “4 - Feedback Atendimento”, marca o chat como Atendido e grava.",
-      "Histórico de chats: toda conversa encerrada no James é guardada no painel de satisfação (filtro por atendente, número e última tag).",
+      "Histórico de chats: a conversa de cada chat que você marca como Atendido é guardada no painel de satisfação, com atendente, número, última tag, código HubSoft, CPF e nome do cadastro. Chat que só some da lista não conta mais como encerrado.",
       "O botão Encerramento Automático volta a aparecer; o radar de chats foi desligado."
     ]
   },
