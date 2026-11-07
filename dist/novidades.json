@@ -1,5 +1,16 @@
 [
   {
+    "versao": "1.8.0",
+    "data": "2026-11-06",
+    "itens": [
+      "SAC: na tela de protocolo enviado, novo botão 'Enviar protocolo e encerrar (automático)' que manda a mensagem e já marca o chat como Atendido (sem mexer na tag).",
+      "Agenda: o botão 'Confirmado' agora também troca a tag do chat para '1 - Tratativa Campo'.",
+      "Novo: botão 'Acessar equipamento' no popup de login do cliente tenta logar sozinho no roteador/antena com as senhas padrão da empresa (até 3 tentativas); para e avisa se achar captcha, não achar o formulário ou esgotar as tentativas.",
+      "Se a extensão der erro, o ícone ganha um aviso vermelho e o painel do ícone vira um botão único para recarregar a extensão e a página.",
+      "Painel do ícone: Portfólio virou atalho para 'chrome://extensions'; versão instalada aparece no painel e no nome do ícone."
+    ]
+  },
+  {
     "versao": "1.7.6",
     "data": "2026-10-31",
     "itens": [
