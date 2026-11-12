@@ -1,5 +1,15 @@
 [
   {
+    "versao": "1.8.1",
+    "data": "2026-11-12",
+    "itens": [
+      "Ao enviar o protocolo de um chamado técnico (agendamento de campo), a tag do chat passa para '5 - Confirmação de visita'.",
+      "Login automático no equipamento bem mais confiável: espera o equipamento responder antes de tentar a próxima senha, acha o botão Login/Entrar em mais modelos (TP-Link, airOS) e preenche usuário e senha de forma que o painel aceita.",
+      "Antenas (porta padrão 80/443) agora entram sozinhas com o usuário e a senha de antena, e roteadores continuam com as senhas de roteador.",
+      "Corrigido: o login automático não ativava quando o equipamento redirecionava de http para https, e o aviso dizia 'já estava logado' mesmo tendo sido a extensão a logar."
+    ]
+  },
+  {
     "versao": "1.8.0",
     "data": "2026-11-06",
     "itens": [
