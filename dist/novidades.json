@@ -1,5 +1,17 @@
 [
   {
+    "versao": "1.9.0",
+    "data": "2026-11-16",
+    "itens": [
+      "Login automático nas OLT (VSOL, TP-Link e Ubiquiti UFiber): ao clicar em ABRIR OLT a extensão entra sozinha com as senhas de OLT. O preenchimento agora espera o painel carregar, confere se o texto ficou e digita como uma pessoa, para funcionar em painéis modernos.",
+      "Agenda: ao clicar em Confirmado, a mensagem 'Confirmado o agendamento para (dia e período)' + 'Obrigado!' já fica preenchida no chat. É só apertar Enter.",
+      "Novo botão azul de ressincronizar, o primeiro ao lado do sino: limpa tudo e consulta de novo cliente, agenda e versão. Ele pisca ao abrir o chat, depois de 30 segundos e depois de 2 minutos.",
+      "Quando a consulta dá erro, aparece 'Tentar novamente'. Se falhar de novo, aparece 'Reiniciar extensão e página'.",
+      "Chat com o cliente só pelo nome (sem código nem CPF): o cadastro é buscado pelo número de telefone, com ou sem o 9, e a tag 'CADASTRO ENCONTRADO PELO NÚMERO DE TELEFONE' avisa. Só vale se houver um único cadastro com esse número.",
+      "Corrigido: a tag '5 - Confirmação de visita' às vezes não trocava ao enviar o protocolo de campo. Agora a extensão espera o envio e confere até 3 vezes."
+    ]
+  },
+  {
     "versao": "1.8.2",
     "data": "2026-11-16",
     "itens": [

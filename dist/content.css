@@ -400,7 +400,8 @@
 #hubauto-badge-vip > *,
 #hubauto-badge-versao > *,
 #hubauto-badge-chamado > *,
-#hubauto-badge-agenda > * {
+#hubauto-badge-agenda > *,
+#hubauto-badge-origem > * {
   display: table;
   margin: 0 0 5px auto !important;
 }
@@ -527,6 +528,16 @@
 #hubauto-atividade .ha-it { margin-right: 10px; white-space: nowrap; }
 #hubauto-atividade .ha-ok { color: #1ab394; }
 #hubauto-atividade .ha-erro { color: #ed5565; }
+#hubauto-atividade .ha-retry { color: #fff; background: #ed5565; padding: 1px 7px; border-radius: 3px; text-decoration: none; cursor: pointer; }
+#hubauto-resync { min-width: 30px !important; padding: 3px 9px; margin-right: 3px; }
+#hubauto-resync i { font-size: 15px; vertical-align: middle; }
+#hubauto-resync.ha-brilho { animation: ha-brilho 1.3s ease-out; }
+@keyframes ha-brilho {
+    0%   { box-shadow: 0 0 0 0 rgba(255,255,255,0); filter: none; }
+    30%  { box-shadow: 0 0 9px 3px rgba(255,255,255,.95); filter: brightness(1.4); }
+    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); filter: none; }
+}
+#hubauto-atividade .ha-reiniciar { background: #c62828; }
 
 #hubauto-login-popup .hp-obs { font-size: 10px; font-style: italic; color: #8a6d3b; margin-top: 2px; font-weight: normal; }
 #hubauto-login-popup .hp-sec { margin-top: 6px; padding: 4px 8px 6px; border-left: 3px solid #bbb; background: #fafafa; }
