@@ -1,5 +1,14 @@
 [
   {
+    "versao": "2.0.0",
+    "data": "2026-11-18",
+    "itens": [
+      "Conexão com o instalador HubAuto (programa no PC): a extensão avisa o instalador quando para de responder ou dá erro, e o instalador pode recarregar só a página de atendimento do James, sem reiniciar o Chrome.",
+      "Nova permissão: acesso à porta local do instalador (127.0.0.1) e ao endereço do James, só para esse recarregamento.",
+      "Registro de atividade: a extensão envia ao instalador HubAuto o que foi feito (chamado aberto, SAC encerrado, agenda, tag trocada, login em equipamento, erros), com o cliente do chat, para a aba Atividade do instalador."
+    ]
+  },
+  {
     "versao": "1.9.1",
     "data": "2026-11-18",
     "itens": [
