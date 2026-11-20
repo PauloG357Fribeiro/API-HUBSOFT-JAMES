@@ -1,5 +1,14 @@
 [
   {
+    "versao": "2.0.1",
+    "data": "2026-11-20",
+    "itens": [
+      "Login automático em equipamento: novo botão '✕ cancelar (Esc)' no aviso de tentativa (ou tecla Esc) para parar o login na hora, sem bloquear o equipamento com tentativas demais.",
+      "Roteador que responde 404 ao abrir com o marcador da extensão: a extensão reabre sozinha o endereço sem o marcador e continua o login.",
+      "Resumo de agenda: o texto '(INSERIR_REGIAO)' agora é uma palavra só, para trocar com duplo clique."
+    ]
+  },
+  {
     "versao": "2.0.0",
     "data": "2026-11-18",
     "itens": [
