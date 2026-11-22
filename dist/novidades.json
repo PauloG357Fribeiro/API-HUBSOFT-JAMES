@@ -1,5 +1,16 @@
 [
   {
+    "versao": "2.0.2",
+    "data": "2026-11-22",
+    "itens": [
+      "Sinal da fibra direto no James: abaixo do ITTV aparece 'Sinal Fibra: -xx,xx dBm' (cor pela qualidade), com 'Consultando…' animado enquanto busca. Vale para as OLTs Ubiquiti UFiber.",
+      "Rádio direto no James: sinal, ruído e CCQ, qualidade e capacidade do airMAX, AP (nome e MAC), situação da LAN0 (PoE) e se o roteador do cliente é um Deco ou foi resetado de fábrica. Precisa do programa HubAuto (instalador) instalado neste PC, versão 0.1.3 ou mais nova; sem ele o James mostra o aviso com o link para instalar.",
+      "ABRIR OLT (UFiber): depois do login, a extensão abre a lista de ONUs e já pesquisa o nome do cliente, avisando cada etapa. Se não achar, explica o que pode ter acontecido (outra OLT, ONU com outro nome, desconfigurada).",
+      "Login automático em equipamento: botão '✕ cancelar (Esc)' no aviso de tentativa e roteador que dá 404 com o marcador da extensão é reaberto sem ele.",
+      "Resumo de agenda: '(INSERIR_REGIAO)' agora é uma palavra só, para trocar com duplo clique."
+    ]
+  },
+  {
     "versao": "2.0.1",
     "data": "2026-11-20",
     "itens": [
