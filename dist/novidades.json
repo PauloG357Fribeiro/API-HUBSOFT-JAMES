@@ -1,5 +1,13 @@
 [
   {
+    "versao": "2.0.3",
+    "data": "2026-11-22",
+    "itens": [
+      "Rádio também para clientes de plano de 50 MB ou menos (não só os da planilha de APs); a consulta só acontece se o aparelho for um rádio Ubiquiti airOS.",
+      "Se o programa HubAuto (instalador) estiver fechado ou não instalado, a linha do Rádio mostra os botões 'Abrir o HubAuto' (o Chrome pede permissão para abrir o programa) e 'Instalar'. Depois de abrir, a consulta é refeita sozinha. Precisa do HubAuto 0.1.4 ou mais novo para o botão Abrir funcionar."
+    ]
+  },
+  {
     "versao": "2.0.2",
     "data": "2026-11-22",
     "itens": [

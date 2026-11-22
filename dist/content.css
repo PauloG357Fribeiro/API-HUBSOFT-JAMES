@@ -606,3 +606,8 @@
 #hubauto-sinal .hubauto-pontos i:nth-child(2) { animation-delay: .2s; }
 #hubauto-sinal .hubauto-pontos i:nth-child(3) { animation-delay: .4s; }
 @keyframes hubauto-ponto { 0%, 60%, 100% { opacity: .2; } 30% { opacity: 1; } }
+#hubauto-sinal .hubauto-sinal-acoes { display: inline-block; margin-top: 4px; }
+#hubauto-sinal a.hubauto-sinal-btn { display: inline-block; margin: 0 6px 2px 0; padding: 3px 10px; border-radius: 3px; font-size: 11px; font-weight: bold; color: #fff !important; text-decoration: none !important; line-height: 1.4; }
+#hubauto-sinal a.hubauto-sinal-btn.abrir { background: #1e7e34; }
+#hubauto-sinal a.hubauto-sinal-btn.instalar { background: #6c757d; }
+#hubauto-sinal a.hubauto-sinal-btn:hover { filter: brightness(1.15); }
