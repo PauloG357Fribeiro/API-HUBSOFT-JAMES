@@ -1,5 +1,17 @@
 [
   {
+    "versao": "2.0.4",
+    "data": "2026-11-24",
+    "itens": [
+      "Sinal da fibra também nas OLTs VSOL (Lobos, Marielza, San Mares/Guaritá, Cruz Branca/Lagoa dos Peixes, Fidel e Laranjeiras): o James acha a ONU pelo MAC do cliente e mostra o sinal em dBm, com cor pela qualidade.",
+      "O 'Consultando…' agora aparece assim que o status do cliente começa a ser buscado (antes só depois), para ficar claro que o sinal está vindo.",
+      "Rádio: o nome do AP é um link. Clique nele para abrir o AP já logado, sem digitar senha.",
+      "Mais confiável: se a consulta de status, de sinal ou do cliente falhar, a extensão tenta de novo sozinha em vez de ficar sem dados até o F5. O botão azul de ressincronizar agora refaz também o status e o sinal.",
+      "Corrigido: o 'Login' do cliente às vezes deixava de ser clicável depois de reconsultar. E em chat sem dados (cliente achado só pelo telefone) agora aparecem Plano, Status, ITTV e sinal.",
+      "Quando a extensão é atualizada com o James aberto, aparece um aviso com o botão 'Recarregar agora' (a aba aberta antes da atualização para de funcionar até recarregar)."
+    ]
+  },
+  {
     "versao": "2.0.3",
     "data": "2026-11-22",
     "itens": [

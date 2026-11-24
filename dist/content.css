@@ -611,3 +611,7 @@
 #hubauto-sinal a.hubauto-sinal-btn.abrir { background: #1e7e34; }
 #hubauto-sinal a.hubauto-sinal-btn.instalar { background: #6c757d; }
 #hubauto-sinal a.hubauto-sinal-btn:hover { filter: brightness(1.15); }
+#hubauto-sinal a[data-hubauto-ap] { text-decoration: underline; cursor: pointer; }
+#hubauto-sinal a.hubauto-sinal-btn.reiniciar { background: #e07b00; }
+#hubauto-sinal a.hubauto-sinal-btn.reiniciar-sim { background: #c62828; }
+#hubauto-sinal .hubauto-reinicio-aviso { color: #b3261e; display: inline-block; margin-top: 2px; }
